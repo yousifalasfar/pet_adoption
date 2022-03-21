@@ -34,41 +34,6 @@ class Seeder {
         done()
       }
     })
-    console.log(petTypesId);
-    LineReader.eachLine(petsPath, async (line, last, done) => {
-      const [
-        name,
-        imgUrl,
-        age,
-        vaccinationStatus,
-        adoptionStory,
-        availableForAdoption
-      ] = line.split(";")
-
-      for (let i = 0; i < petTypesId.length; i++) {
-        const queryString =
-          "INSERT INTO pets (name, img_url, age, vaccination_status, adoption_story,available_for_adoption, pet_type_id) VALUES ($1, $2, $3, $4, $5, $6, $7);"
-          try{
-            await pool.query(queryString, [
-              name,
-              imgUrl,
-              age,
-              vaccinationStatus,
-              adoptionStory,
-              availableForAdoption,
-              petTypesId[i].id
-            ])
-            if (last) {
-              pool.end()
-              console.log("Seeding Complete")
-            }
-            done()
-          }catch (error) {
-        console.log(`Error: ${error}`)
-        done()
-      }
-      }
-    })
   }
 }
 
