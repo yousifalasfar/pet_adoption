@@ -1,7 +1,7 @@
 import React from 'react'
 
 const PetTypeTile = (props) => {
-  const {id, name, imgUrl, description} = props.petType
+  const {name, imgUrl, description} = props.petType
     
   return (
     <div>

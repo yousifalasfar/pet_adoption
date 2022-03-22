@@ -5,7 +5,7 @@ const pool = new pg.Pool({
 })
 
 class PetType {
-  constructor ({name, img_url, imgUrl, description}) {
+  constructor ({id, name, img_url, imgUrl, description}) {
     this.id = id
     this.name = name
     this.imgUrl = img_url || imgUrl
