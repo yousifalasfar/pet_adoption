@@ -29,6 +29,7 @@ const PetTypeList = props => {
           <PetTypeTile key={petType.id} petType={petType}/>
       )
   })
+  
   return (
     <div>
       <h1>Welcome to our Pet Adoption Agency</h1>

@@ -5,7 +5,7 @@ import petTypesRouter from "./api/v1/petTypesRouter.js"
 const rootRouter = new express.Router()
 
 rootRouter.get("/", (req, res) => {
-    res.redirect("/pet-types")
+  res.redirect("/pet-types")
 })
 
 rootRouter.use("/pet-types", clientRouter)
