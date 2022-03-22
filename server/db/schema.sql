@@ -1,4 +1,4 @@
-  DROP TABLE IF EXISTS  pet_types;
+  DROP TABLE IF EXISTS pet_types;
 
   CREATE TABLE pet_types(
     id SERIAL PRIMARY KEY,
