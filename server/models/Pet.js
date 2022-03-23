@@ -35,7 +35,6 @@ class Pet {
       const result = await pool.query("SELECT * FROM pets WHERE id= $1", [id])
       const petData = result.rows[0]
       const pet = new Pet(petData)
-
       return pet
     } catch (err) {
       console.error(err)

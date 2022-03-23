@@ -1,7 +1,6 @@
 import express from "express"
 import Pet from "../../../models/Pet.js"
 
-
 const petsRouter = new express.Router()
 
 petsRouter.get("/:id", async (req, res)=>{
@@ -13,7 +12,5 @@ petsRouter.get("/:id", async (req, res)=>{
     res.status(500).json({ errors })
   }
 })
-
-
 
 export default petsRouter
