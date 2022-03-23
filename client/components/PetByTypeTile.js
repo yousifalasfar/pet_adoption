@@ -2,16 +2,12 @@ import React from "react"
 import {Link} from "react-router-dom"
 
 const PetByTypeTile = ({ petType: { id, name, age, imgUrl, vaccinationStatus, petType } }) => {
-  let ifVaccinated = "No"
-
-  if (vaccinationStatus) {
-    ifVaccinated = "Yes"
-  }
+  const isVaccinated = (vaccinationStatus) ? "Yes" : "No"
 
   return (
     <div className=>
         <Link to={`/pets/${id}`} className="petByTypeContainer grid-x small-12">
-          <img className="petByType" src={imgUrl} alt={name} />
+          <img className="petByType imgDimensions" src={imgUrl} alt={name} />
         </Link>
       <div className="petByTypeContainer grid-y small-12">
         <Link to={`/pets/${id}`}>

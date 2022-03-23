@@ -12,9 +12,9 @@ const App = props => {
     <div className="callout primary">
       <BrowserRouter>
         <Switch>
+          <Route exact path="/pet-types" component={PetTypeList} />
           <Route exact path="/pet-types/:id" component={PetsByType} />
           <Route exact path="/pets/:id" component={PetShow} />
-          <Route exact path="/pet-types" component={PetTypeList} />
         </Switch>
       </BrowserRouter>
     </div>

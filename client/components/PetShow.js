@@ -25,7 +25,7 @@ useEffect(() => {
 
 return (
   <div className="petShowContainer grid-x small-12">
-    <img className="petShow" src={pet.imgUrl} alt={pet.name} />
+    <img className="petShow imgDimensions" src={pet.imgUrl} alt={pet.name} />
     <div className="petShowContainer grid-y" >
       <h3 className="petShow">{pet.name}</h3>
       <p className="petShow">Age: {pet.age}</p>

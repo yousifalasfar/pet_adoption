@@ -14,22 +14,22 @@
 }
 
 body {
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Shrikhand', cursive;
 }
 
-img {
+.imgDimensions {
   height: 15rem;
+  max-width: 10rem;
 }
 
 .petListContainer, .petShowContainer, .petByTypeContainer {
   width: 100%;
-  margin: 3rem;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Shrikhand', cursive;
 }
 
 .petList, .petShow, .petByType {
   align-items: center;
   text-align: center;
   margin: auto;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: 'Shrikhand', cursive;
 }
