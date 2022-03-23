@@ -1,4 +1,5 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
 const PetByTypeTile = ({ petType: { id, name, age, imgUrl, vaccinationStatus } }) => {
   let ifVaccinated = "No"

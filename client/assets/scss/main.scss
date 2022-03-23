@@ -13,14 +13,16 @@
   tab-size: 4;
 }
 
+img {
+  height: 15rem;
+}
+
 .petShowContainer {
   width: 100%;
-  align-items: center;
-  margin: auto;
-  text-align: center;
 }
 
 .petShow {
-  margin: auto;
+  align-items: center;
   text-align: center;
+  margin: auto;
 }

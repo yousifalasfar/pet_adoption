@@ -26,10 +26,12 @@ useEffect(() => {
 return (
   <div className="petShowContainer grid-x small-12">
     <img className="petShow" src={pet.imgUrl} alt={pet.name} />
-    <h3 className="petShow">{pet.name}</h3>
-    <p className="petShow">Age: {pet.age}</p>
-    <p className="petShow">Vaccination Status: {pet.vaccinationStatus}</p>
-    <p className="petShow">Adoption Story: {pet.adoptionStory} </p>
+    <div className="grid-y" >
+      <h3 className="petShow">{pet.name}</h3>
+      <p className="petShow">Age: {pet.age}</p>
+      <p className="petShow">Vaccination Status: {pet.vaccinationStatus}</p>
+      <p className="petShow">Adoption Story: {pet.adoptionStory} </p>
+    </div>
   </div>
 )
 }
