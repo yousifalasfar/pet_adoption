@@ -1,8 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const PetTypeTile = props => {
-  const { id, name, imgUrl, description } = props.petType
+const PetTypeTile = ({petType: {id, name, imgUrl, description}}) => {
 
   return (
     <div>

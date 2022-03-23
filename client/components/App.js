@@ -5,6 +5,7 @@ import "../assets/scss/main.scss"
 import { Route, Switch, BrowserRouter } from "react-router-dom"
 import PetTypeList from "./PetTypeList"
 import PetsByType from "./PetsByType"
+import PetShow from "./PetShow"
 
 const App = props => {
   return (
@@ -13,6 +14,7 @@ const App = props => {
         <Switch>
           <Route exact path="/pet-types" component={PetTypeList} />
           <Route exact path="/pet-types/:id" component={PetsByType} />
+          <Route exact path="/pets/:id" component={PetShow} />
         </Switch>
       </BrowserRouter>
     </div>
