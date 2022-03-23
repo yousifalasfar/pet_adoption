@@ -1,4 +1,4 @@
-Pluto;https://mybritishshorthair.com/wp-content/uploads/2019/02/55e7d4474252a914f1dc8460962a3f7f1d37d8f85254794e77267ed6914d_640_cat-dog.jpg.webp;2;true;Pluto is britsh shorthair in need of a loving home.;true;1;
-Fluffy;https://theritzyrover.com/images/products/detail/LightPinkDogSweater.jpg;2;true;Fluffy is (dog breed) in need of a loving home.;false;2;
+Pluto;https://mybritishshorthair.com/wp-content/uploads/2019/02/55e7d4474252a914f1dc8460962a3f7f1d37d8f85254794e77267ed6914d_640_cat-dog.jpg.webp;2;false;Pluto is britsh shorthair in need of a loving home.;true;1;
+Fluffy;https://theritzyrover.com/images/products/detail/LightPinkDogSweater.jpg;2;false;Fluffy is (dog breed) in need of a loving home.;false;2;
 Thunder;https://icatcare.org/app/uploads/2018/06/Layer-1704-1200x630.jpg;2;true;Thunder is another cat in need of a loving home.;true;1;
 Spot;https://spiritdogtraining.com/wp-content/uploads/2021/07/Dalmatian-1.png;2;true;Spot is a dalmation in need of a loving home.;false;2;

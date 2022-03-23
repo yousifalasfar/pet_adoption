@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import PetByTypeTile from "./PetByTypeTile"
 
-const PetByType = props => {
-  const [petByType, setPetByType] = useState([])
+const PetsByType = props => {
+  const [petsByType, setPetsByType] = useState([])
 
-  const getPetByType = async () => {
+  const getPetsByType = async () => {
     try {
       const id = props.match.params.id
       const response = await fetch(`/api/v1/pet-types/${id}`)
@@ -14,21 +14,21 @@ const PetByType = props => {
         throw error
       }
       const responseBody = await response.json()
-      setPetByType(responseBody.petByType)
+      setPetsByType(responseBody.petsByType)
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
     }
   }
 
   useEffect(() => {
-    getPetByType()
+    getPetsByType()
   }, [])
 
-  const petByTypeList = petByType.map(petByType => {
+  const petByTypeList = petsByType.map(petByType => {
     return <PetByTypeTile key={petByType.id} petType={petByType} />
   })
 
   return <div>{petByTypeList}</div>
 }
 
-export default PetByType
+export default PetsByType

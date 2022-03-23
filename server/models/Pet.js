@@ -29,19 +29,6 @@ class Pet {
     this.availableForAdoption = available_for_adoption || availableForAdoption
     this.petTypeId = pet_type_id || petTypeId
   }
-
-  static async findById(id) {
-    try {
-      const result = await pool.query("SELECT * FROM pets WHERE pet_type_id= $1", [id])
-      const petByTypeData = result.rows
-      const petsByType = petByTypeData.map(petByType => new Pet(petByType))
-
-      return petsByType
-    } catch (err) {
-      console.error(err)
-      throw err
-    }
-  }
 }
 
 export default Pet
