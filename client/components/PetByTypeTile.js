@@ -1,7 +1,7 @@
 import React from "react"
 import {Link} from "react-router-dom"
 
-const PetByTypeTile = ({ petType: { id, name, age, imgUrl, vaccinationStatus } }) => {
+const PetByTypeTile = ({ petType: { id, name, age, imgUrl, vaccinationStatus, petType } }) => {
   let ifVaccinated = "No"
 
   if (vaccinationStatus) {
@@ -9,15 +9,17 @@ const PetByTypeTile = ({ petType: { id, name, age, imgUrl, vaccinationStatus } }
   }
 
   return (
-    <div>
-      <Link to={`/pets/${id}`}>
-        <img src={imgUrl} alt={name} />
-      </Link>
-      <Link to={`/pets/${id}`}>
-      <h3>{name}</h3>
-      </Link>
-      <p>Age: {age}</p>
-      <p>Vaccination Status: {ifVaccinated}</p>
+    <div className=>
+        <Link to={`/pets/${id}`} className="petByTypeContainer grid-x small-12">
+          <img className="petByType" src={imgUrl} alt={name} />
+        </Link>
+      <div className="petByTypeContainer grid-y small-12">
+        <Link to={`/pets/${id}`}>
+        <h3 className="petByType" >{name}</h3>
+        </Link>
+        <p className="petByType">Age: {age}</p>
+        <p className="petByType">Vaccination Status: {ifVaccinated}</p>
+      </div>
     </div>
   )
 }

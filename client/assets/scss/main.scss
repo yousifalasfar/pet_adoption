@@ -13,16 +13,23 @@
   tab-size: 4;
 }
 
+body {
+  font-family: 'Luckiest Guy', cursive;
+}
+
 img {
   height: 15rem;
 }
 
-.petShowContainer {
+.petListContainer, .petShowContainer, .petByTypeContainer {
   width: 100%;
+  margin: 3rem;
+  font-family: 'Luckiest Guy', cursive;
 }
 
-.petShow {
+.petList, .petShow, .petByType {
   align-items: center;
   text-align: center;
   margin: auto;
+  font-family: 'Luckiest Guy', cursive;
 }
