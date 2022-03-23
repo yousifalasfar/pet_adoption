@@ -3,7 +3,7 @@ import PetTypeTile from "./PetTypeTile"
 
 const PetTypeList = props => {
   const [petTypes, setPetTypes] = useState([])
-    
+
   const getPetTypes = async () => {
     try {
       const response = await fetch("/api/v1/pet-types")
@@ -14,22 +14,19 @@ const PetTypeList = props => {
       }
       const responseBody = await response.json()
       setPetTypes(responseBody.petTypes)
-      
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
     }
   }
 
   useEffect(() => {
-      getPetTypes()
+    getPetTypes()
   }, [])
 
   const petTypesList = petTypes.map(petType => {
-      return (
-          <PetTypeTile key={petType.id} petType={petType}/>
-      )
+    return <PetTypeTile key={petType.id} petType={petType} />
   })
-  
+
   return (
     <div>
       <h1>Welcome to our Pet Adoption Agency</h1>

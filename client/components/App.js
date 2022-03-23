@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
 import { hot } from "react-hot-loader/root"
 import "foundation-sites"
-import $ from "jquery"
 import "../assets/scss/main.scss"
 import { Route, Switch, BrowserRouter } from "react-router-dom"
 import PetTypeList from "./PetTypeList"
+import PetsByType from "./PetsByType"
 
 const App = props => {
   return (
@@ -12,9 +12,11 @@ const App = props => {
       <BrowserRouter>
         <Switch>
           <Route exact path="/pet-types" component={PetTypeList} />
+          <Route exact path="/pet-types/:id" component={PetsByType} />
         </Switch>
       </BrowserRouter>
     </div>
-  )}
+  )
+}
 
 export default hot(App)
