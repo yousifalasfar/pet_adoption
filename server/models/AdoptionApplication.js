@@ -4,7 +4,7 @@ const pool = new pg.Pool({
   connectionString: "postgres://postgres:password@localhost:5432/pet_adoption_agency"
 })
 
-class Applicant {
+class AdoptionApplication {
   constructor({
     id,
     name,
@@ -49,4 +49,4 @@ class Applicant {
   }
 }
 
-export default Applicant
+export default AdoptionApplication

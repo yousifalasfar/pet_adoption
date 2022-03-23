@@ -1,6 +1,6 @@
 import express from "express"
 import Pet from "../../../models/Pet.js"
-import Applicant from "../../../models/Applicant.js"
+import AdoptionApplication from "../../../models/AdoptionApplication.js"
 
 const petsRouter = new express.Router()
 
@@ -16,7 +16,7 @@ petsRouter.get("/:id", async (req, res) => {
 
 petsRouter.post("/:id/adoption-applications", async (req, res) => {
   try {
-    const newApplicant = new Applicant(req.body)
+    const newApplicant = new AdoptionApplication(req.body)
     await newApplicant.save()
     res.status(201).json({ newApplicant })
   } catch (errors) {
