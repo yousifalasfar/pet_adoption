@@ -32,7 +32,6 @@ return (
     <p className="petShow">Adoption Story: {pet.adoptionStory} </p>
   </div>
 )
-
 }
 
 export default PetShow
