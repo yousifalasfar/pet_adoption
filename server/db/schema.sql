@@ -7,6 +7,7 @@ CREATE TABLE pet_types(
   img_url VARCHAR (255) NOT NULL,
   description TEXT
 );
+
 CREATE TABLE pets(
   id SERIAL PRIMARY KEY,
   name VARCHAR (255) NOT NULL,
@@ -17,6 +18,7 @@ CREATE TABLE pets(
   available_for_adoption BOOLEAN NOT NULL DEFAULT true,
   pet_type_id INTEGER REFERENCES pet_types(id)
 );
+
 CREATE TABLE adoption_applications(
   id SERIAL PRIMARY KEY,
   name VARCHAR (255) NOT NULL,

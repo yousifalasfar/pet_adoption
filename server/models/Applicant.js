@@ -40,7 +40,6 @@ class Applicant {
           this.petId
         ]
       )
-      debugger
       this.id = result.rows[0].id
       return true
     } catch (err) {
