@@ -1,5 +1,4 @@
 import pg from "pg"
-
 import Pet from "./Pet.js"
 
 const pool = new pg.Pool({
@@ -29,10 +28,13 @@ class PetType {
 
   static async findById(id) {
     try {
-      const result = await pool.query("SELECT * FROM pets WHERE pet_type_id= $1", [id])
+      const result = await pool.query("SELECT pets.*, pet_types.name AS type_name FROM pet_types JOIN pets ON pet_types.id = pets.pet_type_id WHERE pet_type_id= $1;", [id])
       const petByTypeData = result.rows
-      const petsByType = petByTypeData.map(petByType => new Pet(petByType))
-
+      const petsByType = petByTypeData.map(petByType => {
+        const newPet = new Pet(petByType)
+        const petsBytypeWithType = {...newPet, petType : petByType.type_name}
+        return petsBytypeWithType
+      })
       return petsByType
     } catch (err) {
       console.error(err)

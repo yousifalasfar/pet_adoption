@@ -16,9 +16,9 @@ petsRouter.get("/:id", async (req, res) => {
 
 petsRouter.post("/:id/adoption-applications", async (req, res) => {
   try {
-    const newApplicant = new AdoptionApplication(req.body)
-    await newApplicant.save()
-    res.status(201).json({ newApplicant })
+    const newAdoptionApplication = new AdoptionApplication(req.body)
+    await newAdoptionApplication.save()
+    res.status(201).json({ newAdoptionApplication })
   } catch (errors) {
     console.error(errors)
     res.status(500).json({ errors })

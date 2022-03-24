@@ -3,6 +3,7 @@ import PetByTypeTile from "./PetByTypeTile"
 
 const PetsByType = props => {
   const [petsByType, setPetsByType] = useState([])
+  const [petsType, setPetsType] = useState(null)
 
   const getPetsByType = async () => {
     try {
@@ -15,6 +16,7 @@ const PetsByType = props => {
       }
       const responseBody = await response.json()
       setPetsByType(responseBody.petsByType)
+      setPetsType(responseBody.petsByType?.[0]?.petType)
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
     }
@@ -27,8 +29,14 @@ const PetsByType = props => {
   const petByTypeList = petsByType.map(petByType => {
     return <PetByTypeTile key={petByType.id} petType={petByType} />
   })
-
-  return <div>{petByTypeList}</div>
+  return (
+    <div className="petsByTypeContainer grid-x small-12">
+      <h1 className="petsByType">Adoptable <span className="petsByType">{petsType}</span></h1>
+      <div className="petsByTypeContainer grid-y">
+        {petByTypeList}
+      </div>
+    </div>
+  )
 }
 
 export default PetsByType
