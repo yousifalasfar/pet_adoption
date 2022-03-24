@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ErrorList from "./ErrorList"
 
-const ApplicationForm = ({setShowForm, petId, petName}) => {
+const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
   const [application, setApplication] = useState({
     name: "",
     phoneNumber: "",
@@ -11,7 +11,6 @@ const ApplicationForm = ({setShowForm, petId, petName}) => {
   })
  
   const [errors, setErrors] = useState([])
-  const [message, setMessage] = useState(null)
 
   const addNewApplication = async () => {
     try {
@@ -29,7 +28,7 @@ const ApplicationForm = ({setShowForm, petId, petName}) => {
         } else {
         const body = await response.json()
         console.log("Posted successfully!", body);
-        setMessage("Your application is being processed")
+        setMessage("Your application is being processed!")
       }
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
@@ -110,7 +109,7 @@ const ApplicationForm = ({setShowForm, petId, petName}) => {
             </select>
           </label>
           <div className="button-group">
-            <input className="button" type="submit" value="Submit"/>
+            <input className="btn button" type="submit" value="Submit"/>
           </div>
         </form>
       </div>

@@ -1,5 +1,4 @@
 import pg from "pg"
-
 import Pet from "./Pet.js"
 
 const pool = new pg.Pool({

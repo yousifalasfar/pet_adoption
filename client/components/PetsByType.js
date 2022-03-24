@@ -16,7 +16,7 @@ const PetsByType = props => {
       }
       const responseBody = await response.json()
       setPetsByType(responseBody.petsByType)
-      setPetsType(responseBody.petsByType[0].petType)
+      setPetsType(responseBody.petsByType?.[0]?.petType)
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
     }

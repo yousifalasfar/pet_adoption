@@ -4,6 +4,7 @@ import ApplicationForm from "./ApplicationForm"
 const PetShow = props => {
 const [pet, setPet] = useState({})
 const [showForm, setShowForm] = useState(false)
+const [message, setMessage] = useState(null)
 
 const ifVaccinated = (pet.vaccinationStatus) ? "Yes" : "No"
 
@@ -31,17 +32,9 @@ const handleClick = () => {
   setShowForm(true)
 }
 
-const handleSubmit = event => {
-  event.preventDefault()
-  if (validForSubmission()) {
-  addNewApplication()
-  setShowForm(false)
-  }
-}
-
 const renderForm = () => {
   const id = props.match.params.id
-  return <ApplicationForm setShowForm={setShowForm} petId={id} petName={pet.name}/>
+  return <ApplicationForm setShowForm={setShowForm} petId={id} petName={pet.name} setMessage={setMessage} />
 }
 
 return (
@@ -56,7 +49,10 @@ return (
     <div className="petShowContainer petShow">
       <button onClick={handleClick} className="btn button">Adopt Me!</button>
     </div>
+    <div className="petShow">
       {showForm ? renderForm() : null}
+      {message ? message : null}
+    </div>
   </div>
   ) 
 }
