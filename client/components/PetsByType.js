@@ -29,13 +29,11 @@ const PetsByType = props => {
   const petByTypeList = petsByType.map(petByType => {
     return <PetByTypeTile key={petByType.id} petType={petByType} />
   })
-  return (
-    <div className="petsByTypeContainer grid-x small-12">
-      <h1 className="petsByType">Adoptable <span className="petsByType">{petsType}</span></h1>
-      <div className="petsByTypeContainer grid-y">
-        {petByTypeList}
-      </div>
-    </div>
+
+  return (<div>
+            <h1 className="petsByType">Adoptable <span className="petsByType">{petsType}</span></h1>
+            {petByTypeList}
+          </div>
   )
 }
 

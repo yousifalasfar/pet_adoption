@@ -25,4 +25,15 @@ petsRouter.post("/:id/adoption-applications", async (req, res) => {
   }
 })
 
+petsRouter.post("/", async (req, res) => {
+  try {
+    const pet = new Pet(req.body)
+    await pet.save()
+    res.status(201).json({ pet })
+  } catch (errors) {
+    console.error(errors)
+    res.status(500).json({ errors })
+  }
+})
+
 export default petsRouter
