@@ -29,7 +29,7 @@ const PetTypeList = props => {
 
   return (
     <div className="petListContainer grid-x small-12">
-        <h1 className="petList">🐶🐱Welcome to our Pet Adoption Agency🐶🐱</h1>
+        <h1 className="petList">🐶🐱Welcome to our Pet Adoption Agency🐱🐶</h1>
         <div className="petListContainer grid-y">
           <div className="petList">
             {petTypesList}

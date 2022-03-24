@@ -27,7 +27,6 @@ const PetsByType = props => {
   const petByTypeList = petsByType.map(petByType => {
     return <PetByTypeTile key={petByType.id} petType={petByType} />
   })
-
   return <div>{petByTypeList}</div>
 }
 

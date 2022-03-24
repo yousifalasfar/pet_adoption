@@ -1,6 +1,7 @@
 @import "./foundation/settings";
 @import "~foundation-sites/scss/foundation";
 @include foundation-everything;
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Shrikhand&display=swap');
 // place global css here
 *,
 *::before,
@@ -11,25 +12,4 @@
 :root {
   -moz-tab-size: 4;
   tab-size: 4;
-}
-
-body {
-  font-family: 'Shrikhand', cursive;
-}
-
-.imgDimensions {
-  height: 15rem;
-  max-width: 10rem;
-}
-
-.petListContainer, .petShowContainer, .petByTypeContainer {
-  width: 100%;
-  font-family: 'Shrikhand', cursive;
-}
-
-.petList, .petShow, .petByType {
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  font-family: 'Shrikhand', cursive;
 }

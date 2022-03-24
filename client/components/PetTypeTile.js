@@ -9,7 +9,7 @@ const PetTypeTile = ({petType: {id, name, imgUrl, description}}) => {
         <img className="imgDimensions" src={imgUrl} alt={name} />
       </Link>
       <Link to={`/pet-types/${id}`}>
-        <h2>{name}</h2>
+        <h2 className="petTypeTile">{name}</h2>
       </Link>
       <p>{description}</p>
     </div>
