@@ -5,15 +5,16 @@
   max-width: 35rem;
 }
 
-.petListContainer, .petShowContainer, .petByTypeContainer, .appFormContainer {
+.petListContainer, .petShowContainer, .petByTypeContainer, .appFormContainer, .petsByTypeContainer {
   width: 100%;
+  font-family: 'Luckiest Guy', cursive;
 }
 
 .appFormContainer {
   padding-bottom: 5%;
 }
 
-.appForm, .petList, .petShow, .petByType, .petTypeTile {
+.appForm, .petList, .petShow, .petByType, .petTypeTile, .petsByType {
   margin: auto;
   padding-bottom: 1rem;
   align-items: center;
