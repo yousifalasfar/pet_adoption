@@ -25,20 +25,34 @@ class PetType {
       throw err
     }
   }
-
   static async findById(id) {
     try {
-      const result = await pool.query("SELECT pets.*, pet_types.name AS type_name FROM pet_types JOIN pets ON pet_types.id = pets.pet_type_id WHERE pet_type_id= $1;", [id])
-      const petByTypeData = result.rows
-      const petsByType = petByTypeData.map(petByType => {
-        const newPet = new Pet(petByType)
-        const petsBytypeWithType = {...newPet, petType : petByType.type_name}
-        return petsBytypeWithType
-      })
-      return petsByType
+      const query = "SELECT * FROM pet_types WHERE ID = $1;"
+      const result = await pool.query(query, [id])
+      const petTypeData = result.rows[0]
+      const petType = new PetType(petTypeData)
+
+      return petType
+    } catch (error) {
+      console.error(error)
+      throw error
+    }
+  }
+
+  async pets() {
+    const petFile = await import ("./Pet.js")
+    const Pet = petFile.default
+    try {
+      const query = `SELECT * FROM pets WHERE pet_type_id = $1;`
+      const result = await pool.query(query, [this.id])
+      
+      const relatedPetsData = result.rows
+      const relatedPets = relatedPetsData.map(pet => new Pet(pet))
+
+      return relatedPets
     } catch (err) {
       console.error(err)
-      throw err
+      throw(err)
     }
   }
 }

@@ -15,8 +15,9 @@ petTypesRouter.get("/", async (req, res) => {
 
 petTypesRouter.get("/:id", async (req, res) => {
   try {
-    const petsByType = await PetType.findById(req.params.id)
-    res.status(200).json({ petsByType })
+    const petType = await PetType.findById(req.params.id)
+    petType.pets = await petType.pets()
+    res.status(200).json({ petType })
   } catch (errors) {
     console.error(errors)
     res.status(500).json({ errors })

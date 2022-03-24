@@ -22,7 +22,7 @@ const AddNewPetForm = props => {
         headers: new Headers({
           "Content-Type": "application/json"
         }),
-        body: JSON.stringify(application)
+        body: JSON.stringify(newPet)
       })
       if (!response.ok) {
         const errorMessage = `${response.status} (${response.statusText})`

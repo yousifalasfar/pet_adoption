@@ -93,8 +93,7 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
           <label htmlFor="email">
             Email:
             <input
-              type="email"
-              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,63}$" 
+              type="email" 
               name="email"
               onChange={handleInputChange}
               value={application.email}
