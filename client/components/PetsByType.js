@@ -31,9 +31,11 @@ const PetsByType = props => {
   })
   return (
     <div className="petsByTypeContainer grid-x small-12">
-      <h1 className="petsByType">Adoptable <span className="petsByType">{petsType}</span></h1>
+      <h1 className="petsByType">
+        Adoptable <span className="petsByType">{petsType}</span>
+      </h1>
       <div className="petsByTypeContainer grid-y">
-        {petByTypeList}
+        <div>{petByTypeList}</div>
       </div>
     </div>
   )

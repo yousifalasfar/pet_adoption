@@ -28,7 +28,6 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
         } else {
         const body = await response.json()
         console.log("Posted successfully!", body);
-        setMessage("Your application is being processed!")
       }
     } catch(err) {
       console.error(`Error in fetch: ${err.message}`)
@@ -45,8 +44,9 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
   const handleSubmit = event => {
     event.preventDefault()
     if (validForSubmission()) {
-    addNewApplication()
-    setShowForm(false)
+      addNewApplication()
+      setShowForm(false)
+      setMessage("Your application is being processed!")
     }
   }
 
@@ -69,7 +69,7 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
     <div className="appFormContainer grid-x small-12">
       <h1 className="appForm">Adopt {petName}!</h1>
       <div className="appFormContainer grid-y">
-        <form className="appForm" onSubmit={handleSubmit} className="callout" >
+        <form className="appForm callout" onSubmit={handleSubmit}>
           <ErrorList errors={errors} />
           <label htmlFor="name">
           Your Name:

@@ -29,8 +29,9 @@ useEffect(() => {
 }, [])
 
 const handleClick = () => {
-  setShowForm(true)
+  showForm = showForm ? setShowForm(false) : setShowForm(true)
 }
+
 
 const renderForm = () => {
   const id = props.match.params.id
@@ -38,8 +39,8 @@ const renderForm = () => {
 }
 
 return (
-  <div className="petShowContainer grid-x small-12">
-    <img className="petShow imgDimensions" src={pet.imgUrl} alt={pet.name} />
+  <div className="petShowContainer grid-x small-12 petListTile">
+    <img className="petShow imgDimensions pet-img" src={pet.imgUrl} alt={pet.name} />
     <div className="petShowContainer grid-y" >
       <h3 className="petShow">{pet.name}</h3>
       <p className="petShow">Age: {pet.age}</p>
@@ -51,7 +52,8 @@ return (
     </div>
     <div className="petShow">
       {showForm ? renderForm() : null}
-      {message ? message : null}
+
+      <h2 id="message">{message ? message : null}</h2>
     </div>
   </div>
   ) 
