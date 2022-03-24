@@ -6,7 +6,7 @@ const AddNewPetForm = props => {
   const [newPet, setNewPet] = useState({
     name: "",
     age: "",
-    petType: "",
+    petTypeId: "",
     imgUrl: "",
     adoptionStory: "",
     vaccinationStatus: false
@@ -38,10 +38,10 @@ const AddNewPetForm = props => {
     }
   }
 
-  if(id){
-    return <Redirect to={`/pets/${id}`}/>
+  if (id) {
+    return <Redirect to={`/pets/${id}`} />
   }
-  
+
   const handleInputChange = event => {
     const inputTarget = event.currentTarget
     let value
@@ -61,7 +61,7 @@ const AddNewPetForm = props => {
     setNewPet({
       name: "",
       age: "",
-      petType: "",
+      petTypeId: "",
       imgUrl: "",
       adoptionStory: "",
       vaccinationStatus: ""
@@ -78,13 +78,7 @@ const AddNewPetForm = props => {
 
   const validForSubmission = () => {
     let submitErrors = {}
-    const requiredFields = [
-      "name",
-      "age",
-      "petType",
-      "imgUrl",
-      "adoptionStory"
-    ]
+    const requiredFields = ["name", "age", "petTypeId", "imgUrl", "adoptionStory"]
     requiredFields.forEach(field => {
       if (newPet[field].trim() === "") {
         submitErrors = {
@@ -99,58 +93,55 @@ const AddNewPetForm = props => {
 
   return (
     <div className="surrender-form">
-
-   
-    <div className="appFormContainer grid-x small-12">
-      <div className="appFormContainer grid-y">
-        <h1 className="appForm">Surrender A Pet</h1>
-        <form className="appForm callout" onSubmit={handleSubmit}>
-          <ErrorList errors={errors} />
-          <label htmlFor="name">
-            Pet Name:
-            <input type="text" name="name" onChange={handleInputChange} value={newPet.name} />
-          </label>
-          <label htmlFor="age">
-            Age
-            <input type="number" name="age" onChange={handleInputChange} value={newPet.age} />
-          </label>
-          <label htmlFor="petType">
-            Pet Type:
-            <select value={newPet.petType} onChange={handleInputChange} name="petType">
-              <option value=""></option>
-              <option value="1">Cat</option>
-              <option value="2">Dog</option>
-            </select>
-          </label>
-          <label htmlFor="imgUrl">
-            Image Url:
-            <input type="text" name="imgUrl" onChange={handleInputChange} value={newPet.imgUrl} />
-          </label>
-          <label htmlFor="adoptionStory">
-            Adoption Story:
-            <input
-              type="text"
-              name="adoptionStory"
-              onChange={handleInputChange}
-              value={newPet.adoptionStory}
-            />
-          </label>
-
-          <label htmlFor="vaccinationStatus">
-            Vaccinated?
-            <input
-              type="checkbox"
-              name="vaccinationStatus"
-              onChange={handleInputChange}
-              value={newPet.vaccinationStatus}
-            />
-          </label>
-          <div className="button-group">
-            <input className="btn button" type="submit" value="Submit" />
-          </div>
-        </form>
+      <div className="appFormContainer grid-x small-12">
+        <div className="appFormContainer grid-y">
+          <h1 className="appForm">Surrender A Pet</h1>
+          <form className="appForm callout" onSubmit={handleSubmit}>
+            <ErrorList errors={errors} />
+            <label htmlFor="name">
+              Pet Name:
+              <input type="text" name="name" onChange={handleInputChange} value={newPet.name} />
+            </label>
+            <label htmlFor="age">
+              Age
+              <input type="number" name="age" onChange={handleInputChange} value={newPet.age} />
+            </label>
+            <label htmlFor="petTypeId">
+              Pet Type:
+              <select value={newPet.petTypeId} onChange={handleInputChange} name="petTypeId">
+                <option value=""></option>
+                <option value="1">Cat</option>
+                <option value="2">Dog</option>
+              </select>
+            </label>
+            <label htmlFor="imgUrl">
+              Image Url:
+              <input type="text" name="imgUrl" onChange={handleInputChange} value={newPet.imgUrl} />
+            </label>
+            <label htmlFor="adoptionStory">
+              Adoption Story:
+              <input
+                type="text"
+                name="adoptionStory"
+                onChange={handleInputChange}
+                value={newPet.adoptionStory}
+              />
+            </label>
+            <label htmlFor="vaccinationStatus">
+              Vaccinated?
+              <input
+                type="checkbox"
+                name="vaccinationStatus"
+                onChange={handleInputChange}
+                value={newPet.vaccinationStatus}
+              />
+            </label>
+            <div className="button-group">
+              <input className="btn button" type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
     </div>
   )
 }
