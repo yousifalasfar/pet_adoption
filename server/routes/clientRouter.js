@@ -7,7 +7,8 @@ const clientRoutes = [
   "/pet-types/:id",
   "/pet-types",
   "/pets/:id",
-  "/pets/:id/adoption-applications"
+  "/pets/:id/adoption-applications",
+  "/pets/new"
 ]
 
 clientRouter.get(clientRoutes, (req, res) => {

@@ -41,6 +41,27 @@ class Pet {
       throw err
     }
   }
+
+  async save() {
+    try {
+      const result = await pool.query(
+        "INSERT INTO pets (name, img_url, age, vaccination_status, adoption_story, pet_type_id) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id",
+        [
+          this.name,
+          this.imgUrl,
+          this.age,
+          this.vaccinationStatus,
+          this.adoptionStory,
+          this.petTypeId
+        ]
+      )
+      this.id = result.rows[0].id
+      return true
+    } catch (err) {
+      console.error(err)
+      throw err
+    }
+  }
 }
 
 export default Pet

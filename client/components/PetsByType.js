@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react"
 import PetByTypeTile from "./PetByTypeTile"
 
 const PetsByType = props => {
-  const [petsByType, setPetsByType] = useState([])
-  const [petsType, setPetsType] = useState(null)
+  const [petsByType, setPetsByType] = useState({pets:[]})
 
   const getPetsByType = async () => {
     try {
@@ -15,8 +14,7 @@ const PetsByType = props => {
         throw error
       }
       const responseBody = await response.json()
-      setPetsByType(responseBody.petsByType)
-      setPetsType(responseBody.petsByType?.[0]?.petType)
+      setPetsByType(responseBody.petType)
     } catch (error) {
       console.error(`Error in Fetch: ${error.message}`)
     }
@@ -26,14 +24,16 @@ const PetsByType = props => {
     getPetsByType()
   }, [])
 
-  const petByTypeList = petsByType.map(petByType => {
+  const petByTypeList = petsByType.pets.map(petByType => {
     return <PetByTypeTile key={petByType.id} petType={petByType} />
   })
   return (
     <div className="petsByTypeContainer grid-x small-12">
-      <h1 className="petsByType">Adoptable <span className="petsByType">{petsType}</span></h1>
+      <h1 className="petsByType">
+        Adoptable <span className="petsByType">{petsByType.name}</span>
+      </h1>
       <div className="petsByTypeContainer grid-y">
-        {petByTypeList}
+        <div>{petByTypeList}</div>
       </div>
     </div>
   )

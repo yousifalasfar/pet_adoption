@@ -5,10 +5,12 @@ const PetByTypeTile = ({ petType: { id, name, age, imgUrl, vaccinationStatus, pe
   const ifVaccinated = (vaccinationStatus) ? "Yes" : "No"
 
   return (
-    <div>
+    <div className="petListTile">
+      <div className="pet-img">
       <Link to={`/pets/${id}`} className="petByTypeContainer grid-x small-12">
         <img className="petByType imgDimensions" src={imgUrl} alt={name} />
       </Link>
+      </div>
       <div className="petByTypeContainer grid-y small-12">
         <Link to={`/pets/${id}`}>
           <h3 className="petByType">{name}</h3>

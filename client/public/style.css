@@ -1,8 +1,8 @@
 /* your styles, here */
 
 .imgDimensions {
-  height: 20rem;
-  max-width: 35rem;
+  width: 80%;
+  height: 15rem;
 }
 
 .petListContainer, .petShowContainer, .petByTypeContainer, .appFormContainer, .petsByTypeContainer {
@@ -24,4 +24,35 @@
 
 .btn, .button {
   max-width: 10rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+}
+
+.petTile, .petListTile  {
+  box-shadow: 4px 20px 30px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
+  width: auto;
+  margin: 1.3rem auto;
+}
+
+.petTile {
+  width: auto;
+}
+
+.petListTile {
+  width: 40%;
+}
+
+.pet-img {
+  padding-top: 1rem;
+}
+
+.surrender-form{
+  margin: 0 200px;
+}
+
+#message {
+  color: red;
 }
