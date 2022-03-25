@@ -5,24 +5,34 @@
   height: 15rem;
 }
 
-.petListContainer, .petShowContainer, .petByTypeContainer, .appFormContainer, .petsByTypeContainer {
+.petListContainer,
+.petShowContainer,
+.petByTypeContainer,
+.appFormContainer,
+.petsByTypeContainer {
   width: 100%;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: "Luckiest Guy", cursive;
 }
 
 .appFormContainer {
   padding-bottom: 5%;
 }
 
-.appForm, .petList, .petShow, .petByType, .petTypeTile, .petsByType {
+.appForm,
+.petList,
+.petShow,
+.petByType,
+.petTypeTile,
+.petsByType {
   margin: auto;
   padding-bottom: 1rem;
   align-items: center;
   text-align: center;
-  font-family: 'Luckiest Guy', cursive;
+  font-family: "Luckiest Guy", cursive;
 }
 
-.btn, .button {
+.btn,
+.button {
   max-width: 10rem;
 }
 
@@ -31,7 +41,8 @@
   justify-content: center;
 }
 
-.petTile, .petListTile  {
+.petTile,
+.petListTile {
   box-shadow: 4px 20px 30px 4px rgba(0, 0, 0, 0.1), 4px 4px 4px 4px rgba(0, 0, 0, 0.15);
   width: auto;
   margin: 1.3rem auto;
@@ -49,10 +60,28 @@
   padding-top: 1rem;
 }
 
-.surrender-form{
+.surrender-form {
   margin: 0 200px;
 }
 
 #message {
   color: red;
+}
+
+#logo {
+  height: 100px;
+}
+
+.dropdown {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-bar-left {
+  display: flex;
+}
+.top-bar {
+  height: 4rem;
+  font-family: "Luckiest Guy", cursive;
 }

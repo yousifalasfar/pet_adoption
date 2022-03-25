@@ -40,19 +40,23 @@ class PetType {
   }
 
   async pets() {
-    const petFile = await import ("./Pet.js")
+    const petFile = await import("./Pet.js")
     const Pet = petFile.default
     try {
       const query = `SELECT * FROM pets WHERE pet_type_id = $1;`
       const result = await pool.query(query, [this.id])
-      
+
       const relatedPetsData = result.rows
       const relatedPets = relatedPetsData.map(pet => new Pet(pet))
-
-      return relatedPets
+      const availablePets = relatedPets.filter(pet => {
+        if (pet.availableForAdoption === true) {
+          return pet
+        }
+      })
+      return availablePets
     } catch (err) {
       console.error(err)
-      throw(err)
+      throw err
     }
   }
 }

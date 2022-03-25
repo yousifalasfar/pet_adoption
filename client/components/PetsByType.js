@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import PetByTypeTile from "./PetByTypeTile"
 
 const PetsByType = props => {
-  const [petsByType, setPetsByType] = useState({pets:[]})
+  const [petsByType, setPetsByType] = useState({ pets: [] })
 
   const getPetsByType = async () => {
     try {

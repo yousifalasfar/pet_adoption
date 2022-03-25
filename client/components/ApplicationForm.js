@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ErrorList from "./ErrorList"
 
-const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
+const ApplicationForm = ({ setShowForm, petId, petName, setMessage }) => {
   const [application, setApplication] = useState({
     name: "",
     phoneNumber: "",
@@ -9,7 +9,7 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
     homeStatus: "",
     petId: petId
   })
- 
+
   const [errors, setErrors] = useState([])
 
   const addNewApplication = async () => {
@@ -22,25 +22,25 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
         body: JSON.stringify(application)
       })
       if (!response.ok) {
-          const errorMessage = `${response.status} (${response.statusText})`
-          const error = new Error(errorMessage)
-          throw(error)
-        } else {
+        const errorMessage = `${response.status} (${response.statusText})`
+        const error = new Error(errorMessage)
+        throw error
+      } else {
         const body = await response.json()
-        console.log("Posted successfully!", body);
+        console.log("Posted successfully!", body)
       }
-    } catch(err) {
+    } catch (err) {
       console.error(`Error in fetch: ${err.message}`)
     }
   }
-  
+
   const handleInputChange = event => {
     setApplication({
       ...application,
       [event.currentTarget.name]: event.currentTarget.value
     })
   }
-  
+
   const handleSubmit = event => {
     event.preventDefault()
     if (validForSubmission()) {
@@ -54,13 +54,13 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
     let submitErrors = {}
     const requiredFields = ["name", "phoneNumber", "email", "homeStatus"]
     requiredFields.forEach(field => {
-      if(application[field].trim() === "") {
+      if (application[field].trim() === "") {
         submitErrors = {
           ...submitErrors,
           [field]: "is blank"
-          }
         }
-      })
+      }
+    })
     setErrors(submitErrors)
     return _.isEmpty(submitErrors)
   }
@@ -72,19 +72,14 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
         <form className="appForm callout" onSubmit={handleSubmit}>
           <ErrorList errors={errors} />
           <label htmlFor="name">
-          Your Name:
-            <input
-              type="text"
-              name="name"
-              onChange={handleInputChange}
-              value={application.name}
-            />
+            Your Name:
+            <input type="text" name="name" onChange={handleInputChange} value={application.name} />
           </label>
           <label htmlFor="phoneNumber">
             Phone Number: (format: XXX-XXX-XXXX)
             <input
-              type="tel" 
-              pattern="^\d{3}-\d{3}-\d{4}$" 
+              type="tel"
+              pattern="^\d{3}-\d{3}-\d{4}$"
               name="phoneNumber"
               onChange={handleInputChange}
               value={application.phoneNumber}
@@ -93,7 +88,7 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
           <label htmlFor="email">
             Email:
             <input
-              type="email" 
+              type="email"
               name="email"
               onChange={handleInputChange}
               value={application.email}
@@ -101,14 +96,14 @@ const ApplicationForm = ({setShowForm, petId, petName, setMessage}) => {
           </label>
           <label htmlFor="homeStatus">
             Home Status:
-            <select value={application.homeStatus} onChange={handleInputChange} name="homeStatus"> 
+            <select value={application.homeStatus} onChange={handleInputChange} name="homeStatus">
               <option value=""></option>
               <option value="rent">Rent</option>
               <option value="own">Own</option>
             </select>
           </label>
           <div className="button-group">
-            <input className="btn button" type="submit" value="Submit"/>
+            <input className="btn button" type="submit" value="Submit" />
           </div>
         </form>
       </div>
