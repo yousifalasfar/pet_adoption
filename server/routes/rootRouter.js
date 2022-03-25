@@ -13,5 +13,4 @@ rootRouter.use("/api/v1/pet-types", petTypesRouter)
 rootRouter.use("/api/v1/pets", petsRouter)
 rootRouter.use("/", clientRouter)
 
-
 export default rootRouter
