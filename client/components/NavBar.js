@@ -12,7 +12,7 @@ const NavBar = () => {
     let history = useHistory()
 
     console.log(location.pathname)
-    console.log(history)
+    console.log(history.location.pathname)
   }
 
   usePageViews()
